@@ -1,9 +1,13 @@
-
+import Header from './components/header';
+import Videos from './components/videos';
 import './app.css';
 
 function App() {
   return (
-    <h1>TEMPLATE</h1>    
+    <>
+    <Header/>
+    <Videos/>
+    </>
   );
 }
 
