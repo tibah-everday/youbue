@@ -30,7 +30,7 @@ function Videos() {
             console.log(videos);
         }
         )
-        .catch(error => console.log('error', error))
+        .catch(error => console.log('error::', error))
     //    axios({
     //         method:"get",
     //         url: "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=%EB%85%B8%EB%8F%99%EB%A6%BC&key=AIzaSyDhLRQLN-_jxsQM1AVCFg1CWxkUUtcQsRw",
