@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+}
+
+.header input {
+  width: 300px;
+  height: 30px;
+}
+
+.youtubeIcon {
+  position: relative;
+  top: 5px;
+  padding-right: 10px;
+}

@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import VideoList from './video_list/video_list';
+import './videos.css'
 import axios from 'axios';
 function Videos() {
     // async function getData(){
@@ -27,7 +28,7 @@ function Videos() {
         .then(response=> response.json())
         .then(result => {
             setVideos(result.items)
-            console.log(videos);
+            // console.log(videos);
         }
         )
         .catch(error => console.log('errormessage::', error))
@@ -36,10 +37,15 @@ function Videos() {
     //         url: "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=%EB%85%B8%EB%8F%99%EB%A6%BC&key=AIzaSyDhLRQLN-_jxsQM1AVCFg1CWxkUUtcQsRw",
     //     }).then(result=>setVideos(result.items))
     //     .catch(error => console.log('error:', error));        
-        console.log(videos);
+        // console.log(videos);
     },[])
 
+    useEffect(()=>{
+        console.log(videos);
+    },[videos])
+
     return (        
+        
         <VideoList videos={videos}/>   
         // <div>example</div>      
     )
