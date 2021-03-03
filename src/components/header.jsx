@@ -4,13 +4,9 @@ import './header.css';
 function Header(props) {
     const formRef = useRef();
     function handleSubmit(e){
-        e.preventDefault();
-        
-        const keyword = formRef.current[0].value;
-        const newUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${keyword}&key=AIzaSyDhLRQLN-_jxsQM1AVCFg1CWxkUUtcQsRw`
-        
-        props.handleSearch(newUrl);
-
+        e.preventDefault();        
+        const keyword = formRef.current[0].value;                
+        props.handleSearch(keyword);
     }
     return (
         <div className="header">

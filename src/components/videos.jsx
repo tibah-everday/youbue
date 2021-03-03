@@ -15,29 +15,20 @@ function Videos(props) {
     // console.dir(datas);
     // 이게 왜 콘솔에 안 나와?
     // console.log(datas.data.items);
-    const [videos, setVideos] = useState([]);
     
-    useEffect(()=>{        
-        var requestOptions = {
-            method: "GET",
-            redirect: 'follow'
-        }
-        fetch(
-            props.url, requestOptions
-        )
-        .then(response=> response.json())
-        .then(result => {
-            setVideos(result.items)
-            
-        }
-        )
-        .catch(error => console.log('errormessage::', error))
-    
+    //     const defaultVideos = props.youtube.defaultVideos().then(result=>{
+        //         return result;
+        //     });
+        //    console.log("defaultVideos: ",defaultVideos);
+        const [videos, setVideos] = useState([]);
+        useEffect(()=>{       
+        props.youtube.showVideos(props.url).then((result)=>{
+            setVideos(result.items);
+        })
     },[props.url])
 
     useEffect(()=>{
         console.log(videos);
-        console.log(props.url);
     },[videos])
     
     return (        

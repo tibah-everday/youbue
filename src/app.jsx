@@ -9,10 +9,11 @@ import './app.css';
 
 
 
-function App() {
-
-  const [url, setUrl] = useState('https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=%EB%85%B8%EB%8F%99%EB%A6%BC&key=AIzaSyDhLRQLN-_jxsQM1AVCFg1CWxkUUtcQsRw');    
-  function handleSearch(newUrl){    
+function App(props) {
+  // console.log(props.url);
+  const [url, setUrl] = useState(props.youtube.url);    
+  function handleSearch(keyword){    
+    const newUrl = `${props.youtube.beforeKey}${keyword}${props.youtube.afterKey}`;
     setUrl(newUrl);
   }
   useEffect(()=>{    
@@ -20,8 +21,8 @@ function App() {
   
   return (
     <>
-    <Header url={url} handleSearch={handleSearch}/>
-    <Videos url={url}/>
+    <Header handleSearch={handleSearch}/>
+    <Videos youtube={props.youtube} url={url}/>
     </>
   );
 }
