@@ -12,12 +12,10 @@ import './app.css';
 function App() {
 
   const [url, setUrl] = useState('https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=%EB%85%B8%EB%8F%99%EB%A6%BC&key=AIzaSyDhLRQLN-_jxsQM1AVCFg1CWxkUUtcQsRw');    
-  function handleSearch(newUrl){
-    console.log("it works");
+  function handleSearch(newUrl){    
     setUrl(newUrl);
   }
-  useEffect(()=>{
-    console.log(url);
+  useEffect(()=>{    
   },[url])
   
   return (
