@@ -33,7 +33,7 @@ function Videos(props) {
     },[videos])
     
     return (                
-        <VideoList videos={videos}/>   
+        <VideoList videos={videos} onVideoClick={props.onVideoClick}/>   
         // <div>example</div>      
     )
 }
