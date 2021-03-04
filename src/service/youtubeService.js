@@ -1,14 +1,10 @@
 class Youtube{
-    constructor(key){
-        this.key = key;
-        // this.getRequestOptions ={
-        //     method: "GET",
-        //     redirect: 'follow'
-        // }
-        this.url= 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=%EB%85%B8%EB%8F%99%EB%A6%BC&key=AIzaSyBcVKV3kPP7p9AZrORuYWV69BJSk3DT9WE';
+    constructor(beforeKey, afterKey, defaultUrl){
+        
+        this.defaultUrl= defaultUrl;
         // this.url= "https://jsonplaceholder.typicode.com/albums"
-        this.beforeKey = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q='
-        this.afterKey = '&key=AIzaSyBcVKV3kPP7p9AZrORuYWV69BJSk3DT9WE'
+        this.beforeKey = beforeKey;
+        this.afterKey = afterKey;
         
     }
         

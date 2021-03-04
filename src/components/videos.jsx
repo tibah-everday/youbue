@@ -23,6 +23,7 @@ function Videos(props) {
         const [videos, setVideos] = useState([]);
         useEffect(()=>{       
         props.youtube.showVideos(props.url).then((result)=>{
+            console.log(result);
             setVideos(result.items);
         })
     },[props.url])
@@ -31,8 +32,7 @@ function Videos(props) {
         console.log(videos);
     },[videos])
     
-    return (        
-        
+    return (                
         <VideoList videos={videos}/>   
         // <div>example</div>      
     )

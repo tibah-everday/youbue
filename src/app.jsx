@@ -11,12 +11,13 @@ import './app.css';
 
 function App(props) {
   // console.log(props.url);
-  const [url, setUrl] = useState(props.youtube.url);    
+  const [url, setUrl] = useState(props.youtube.defaultUrl);    
   function handleSearch(keyword){    
     const newUrl = `${props.youtube.beforeKey}${keyword}${props.youtube.afterKey}`;
     setUrl(newUrl);
   }
   useEffect(()=>{    
+    console.log(url);
   },[url])
   
   return (
